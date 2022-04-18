@@ -5,12 +5,12 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
-//import Switch,BrowserRouter } from 'react-router-dom';
+// import Switch,BrowserRouter } from 'react-router6-dom';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Link,
+ 
   useParams
 } from 'react-router-dom';
 
