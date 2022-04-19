@@ -1,36 +1,43 @@
 
-import React,{useState} from 'react'
+import React from 'react'
 
 
-export default function About() {
-    const [myStyle, setmyStyle] = useState({
-        color:  'black',
-        backgroundColor: 'white'
-    });
+export default function About(props) {
+    // const [myStyle, setmyStyle] = useState({
+    //     color:  'black',
+    //     backgroundColor: 'white'
+    // });
 
-    const [btnText, setBtnText ] = useState("Enable Dark Mode")
-  const  changeMode =()=>{
-        if(myStyle.color === 'white'){
-            setmyStyle({
-                color:  'black',
-                backgroundColor: 'white'
-            }) 
-            setBtnText("Enable Dark Mode")
-        }
-        else{
-            setmyStyle({
-                color:  'white',
-                backgroundColor: 'black',
-                border: '2px solid white'
-            })
-            setBtnText("Enable Light Mode")
-        }
+    let myStyle ={
+        color:props.mode==='dark'?'white':'black',
+        backgroundColor:props.mode === 'dark'?'black':'white'
+
     }
+
+
+//     const [btnText, setBtnText ] = useState("Enable Dark Mode")
+//   const  changeMode =()=>{
+//         if(myStyle.color === 'white'){
+//             setmyStyle({
+//                 color:  'black',
+//                 backgroundColor: 'white'
+//             }) 
+//             setBtnText("Enable Dark Mode")
+//         }
+//         else{
+//             setmyStyle({
+//                 color:  'white',
+//                 backgroundColor: 'black',
+//                 border: '2px solid white'
+//             })
+//             setBtnText("Enable Light Mode")
+//         }
+//     }
 
   return (
       <>
     <div className='container' style={myStyle}>
-        <h1>ABout Us</h1>
+        <h1>About Us</h1>
             <div className="accordion" id="accordionExample">
         <div className="card" >
             <div className="card-header" id="headingOne">
@@ -42,7 +49,7 @@ export default function About() {
             </div>
 
             <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div className="card-body" >
+            <div className="card-body" style={myStyle} >
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
             </div>
@@ -56,7 +63,7 @@ export default function About() {
             </h2>
             </div>
             <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div className="card-body" >
+            <div className="card-body" style={myStyle} >
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
             </div>
@@ -70,11 +77,11 @@ export default function About() {
             </h2>
             </div>
             <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div className="card-body" >
+            <div className="card-body" style={myStyle}>
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
             </div>
             </div>
-            <button  className="btn btn-primary" onClick={changeMode}  > {btnText}</button>
+         
         </div>
         </div>
     </div>

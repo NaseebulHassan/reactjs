@@ -57,16 +57,15 @@ const toggleMode=()=>{
 
     <Navbar title="Todolist" mode={mode} toggleMode={toggleMode} />
     <Alert alert={alert} />
-      
+   
          {/* <About /> */}
-
+      
       <Switch>
-          <Route path="/Textform">
-         
-           <Textform showAlert={showAlert} heading="Enter the text to analyze" />
-  
+      
+          <Route exact path="/" >
+          <Textform showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
           </Route>
-          <Route path="/about">
+          <Route exact path="/about" mode={mode}>
             <About />
           </Route>
      

@@ -62,24 +62,24 @@ export default function Textform(props) {
             <h1>{props.heading} - </h1>
             <div className="form-group">
              
-                <textarea type="textbox" style={{backgroundColor: props.mode==='dark'?'#042743':'white'}} className="form-control" onChange={handleOnchange} id="textbox" value={text}  />
+                <textarea type="textbox" style={{backgroundColor: props.mode==='dark'?'gray':'white',color: props.mode==='dark'?'white':'black'}} className="form-control" onChange={handleOnchange} id="textbox" value={text}  />
 
             </div>
             <div className="conatiner my-3">
-            <button className="btn btn-primary" style={Btns} onClick={Upclick} >Convert to UpperCase</button>
+            <button className="btn btn-primary m-1 my-1" style={Btns} onClick={Upclick} >Convert to UpperCase</button>
 
-            <button className="btn btn-primary" style={Btns} onClick={lowerclick} >Convert to LowerCase</button>
-            <button className="btn btn-primary" style={Btns} onClick={handleCleartext} >CLear Text</button>
+            <button className="btn btn-primary m-1 my-1" style={Btns} onClick={lowerclick} >Convert to LowerCase</button>
+            <button className="btn btn-primary m-1 my-1" style={Btns} onClick={handleCleartext} >CLear Text</button>
 
-            <button className="btn btn-primary" style={Btns} onClick={CopyHandle} >Copy Text</button>
-            <button className="btn btn-primary" style={Btns} onClick={handleSpaces} >Remove Extra Spaces</button>
-            <button className="btn btn-primary" style={Btns} onClick={handleCapital} >Captlize Words</button>
+            <button className="btn btn-primary m-1 my-1" style={Btns} onClick={CopyHandle} >Copy Text</button>
+            <button className="btn btn-primary m-1 my-1" style={Btns} onClick={handleSpaces} >Remove Extra Spaces</button>
+            <button className="btn btn-primary m-1 my-1" style={Btns} onClick={handleCapital} >Captlize Words</button>
             </div>
             <div className="container my-3" >
                 <h2 >
                     Your Text Summery
                 </h2>
-                <p>{text.split(/[^\s]+/).length - 1} words and {text.length} characters</p>
+                <p>{text.split (" ").filter(element=>{return element.length!== 0}).length} words and {text.length} characters</p>
                 <p>{0.0008 * text.split(" ").length} read minuts</p>
                 <h2>Preview</h2>
                 <p>{text.length>0?text:"Enter the something to preview it here"}</p>
