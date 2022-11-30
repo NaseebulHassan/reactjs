@@ -65,7 +65,7 @@ const toggleMode=()=>{
           <Route exact path="/" >
           <Textform showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
           </Route>
-          <Route exact path="/about" mode={mode}>
+          <Route exact path="" mode={mode}>
             <About />
           </Route>
      
